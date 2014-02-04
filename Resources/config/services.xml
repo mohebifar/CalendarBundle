@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="mohebifar_calendar.service.class">Mohebifar\CalendarBundle\Calendar\Service</parameter>
+        <parameter key="mohebifar_calendar.twig.extension">Mohebifar\CalendarBundle\Twig\Extension\CalendarExtension</parameter>
+    </parameters>
+
+    <services>
+        <service id="mohebifar.calendar" class="%mohebifar_calendar.service.class%">
+            <argument>%calendar%</argument>
+        </service>
+        
+        <service id="mohebifar.calendar.twig" class="%mohebifar_calendar.twig.extension%">
+            <tag name="twig.extension" />
+            <argument type="service" id="twig.loader" />
+            <argument type="service" id="mohebifar.calendar" />
+        </service>
+    </services>
+</container>
