@@ -7,6 +7,24 @@ Currently drivers are :
 
 Installation
 ============
+You can install this bundle using composer :
+
+    require: {
+        ...,
+		"mohebifar/calendar-bundle": "dev-master"
+	}
+	
+Then update :
+
+    composer update
+
+Also you can install it using git :
+
+    git clone https://github.com/mohebifar/CalendarBundle.git
+
+After getting package, you have to include that. Edit `app/AppKernel.php` and add this line in `registerBundles` function :
+
+    $bundles[] = new Mohebifar\CalendarBundle\MohebifarCalendarBundle();
 
 Configuration
 =============
@@ -66,3 +84,6 @@ You can set Timezones by one of the following methods :
 
 Twig Extension
 =======
+Twig filter is available for this bundle. If you want to print out some timestamp or DateTime object, you can use `date_filter` in twig. for example :
+
+    <span class="date">{{ post.date|date_filter('Y-m-d H:i:s') }}</span>
