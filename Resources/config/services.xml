@@ -11,7 +11,7 @@
 
     <services>
         <service id="mohebifar.calendar" class="%mohebifar_calendar.service.class%">
-            <argument>%calendar%</argument>
+            <argument>%mohebifar_calendar.driver%</argument>
         </service>
         
         <service id="mohebifar.calendar.twig" class="%mohebifar_calendar.twig.extension%">
