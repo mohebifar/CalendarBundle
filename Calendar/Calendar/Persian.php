@@ -142,6 +142,8 @@ class Persian extends AbstractCalendar
         $timestamp += $this->calendarTime->getHour() * 60 * 60;
 
         $year = $this->calendarTime->getYear();
+        $day = $this->calendarTime->getDay();
+        
         $dayOfYear = ($day + self::$mountCounter[$this->calendarTime->getMonth() - 1]);
 
         if ($year < 100) {
@@ -257,7 +259,7 @@ class Persian extends AbstractCalendar
         $mod128 = $mod2820 % 128;
 
         $leapCount = 0;
-        while ($mod128 > self::$khayamLeapYears[$leapCount]) {
+        while (isset(self::$khayamLeapYears[$leapCount]) && $mod128 > self::$khayamLeapYears[$leapCount]) {
             $leapCount++;
         }
 
