@@ -1,3 +1,6 @@
+As this repository is supported no more. Project moved to : [MohebifarDateTimeBundle](https://github.com/mohebifar/DateTimeBundle)
+
+
 CalendarBundle is a Symfony2 bundle which helps you to show Datetimes based on a calendar. CalendarBundle uses a strategy that allows you to make your arbitary driver.
 
 Currently drivers are :
@@ -29,11 +32,10 @@ After getting package, you have to include that. Edit `app/AppKernel.php` and ad
 Configuration
 =============
 
-Edit *app/config/parameters.yml* as following :
+Edit *app/config/config.yml* as following :
 
-    parameters:
-        ...
-        calendar: Persian
+    mohebifar_calendar:
+        driver: Persian
         
 And now your calendar service uses persian driver.
 
